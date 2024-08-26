@@ -1,0 +1,191 @@
+.Desktop1 {
+    
+        width: 1440px;
+            height: 3400px;
+            position: relative;
+            background: white;
+          
+}
+
+.Footer {
+    
+          width: 1440px;
+              height: 126px;
+              left: 0px;
+              top: 3274px;
+              position: absolute;
+              background: #141414;
+            
+}
+
+.Form {
+    
+          width: 1440px;
+              height: 1227px;
+              left: 0px;
+              top: 2047px;
+              position: absolute;
+            
+}
+
+.Rectangle4 {
+    
+            width: 1440px;
+                height: 1226px;
+                left: 0px;
+                top: 1px;
+                position: absolute;
+                background: #e4e4e4;
+              
+}
+
+.Wavesopacity11 {
+    
+            width: 1440px;
+                height: 300px;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+              
+}
+
+.Vector {
+    
+              width: 1440px;
+                  height: 227.27px;
+                  left: 0px;
+                  top: 0px;
+                  position: absolute;
+                  background: #141414;
+                
+}
+
+.Wavesopacity12 {
+    
+            width: 1440px;
+                height: 300px;
+                left: 1440px;
+                top: 1025px;
+                position: absolute;
+                transform: rotate(180deg);
+                transform-origin: 0 0;
+              
+}
+
+.GetStarted {
+    
+              left: 987px;
+                  top: 17px;
+                  position: absolute;
+                  color: white;
+                  font-size: 24px;
+                  font-family: TypoGraphica;
+                  font-weight: 400;
+                  word-wrap: break-word;
+                
+}
+
+.Description {
+    
+          width: 1440px;
+              height: 1024px;
+              left: 0px;
+              top: 1025px;
+              position: absolute;
+            
+}
+
+.Rectangle3 {
+    
+            width: 1440px;
+                height: 1024px;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+                background: #141414;
+              
+}
+
+.KnowUs {
+    
+              left: 319px;
+                  top: 17px;
+                  position: absolute;
+                  color: white;
+                  font-size: 24px;
+                  font-family: TypoGraphica;
+                  font-weight: 400;
+                  word-wrap: break-word;
+                
+}
+
+.Header {
+    
+          width: 1440px;
+              height: 1025px;
+              left: 0px;
+              top: 0px;
+              position: absolute;
+            
+}
+
+.Rectangle2 {
+    
+            width: 1440px;
+                height: 1024px;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+                background: #e4e4e4;
+              
+}
+
+.CookingItUpInTheDsWay {
+    left: 549px; top: 682px; position: absolute
+}
+
+.S {
+    
+            left: 762px;
+                top: 237px;
+                position: absolute;
+                color: black;
+                font-size: 420px;
+                font-family: TypoGraphica;
+                font-weight: 400;
+                word-wrap: break-word;
+              
+}
+
+.Image3 {
+    
+            width: 300px;
+                height: 300px;
+                left: 462px;
+                top: 662px;
+                position: absolute;
+                transform: rotate(-90deg);
+                transform-origin: 0 0;
+              
+}
+
+.Navbar {
+    
+            width: 1440px;
+                height: 160px;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+              
+}
+
+.Rectangle5 {
+    
+              width: 1440px;
+                  height: 160px;
+                  left: 0px;
+                  top: 0px;
+                  position: absolute;
+                
+}
+
