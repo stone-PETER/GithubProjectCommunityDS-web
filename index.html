@@ -1,104 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <link href="./styles.css" rel="stylesheet"/>
-  <script src="./main.js">
-  </script>
-  <title>
-   Document
-  </title>
- </head>
- <body>
-  <div class="Desktop1">
-   <div class="Footer">
-   </div>
-   <div class="Form">
-    <div class="Rectangle4">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover our unique approach to bridging the gap between academic learning and real-world skills through collaborative teams and GitHub contributions.">
+
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const skillsSelect = document.getElementById('pastSkills');
+            const futureSkillsSelect = document.getElementById('futureSkills');
+            const radioContainer = document.getElementById('radio-container');
+            
+            const selectedSkills = new Set();
+        
+            // Function to create radio buttons for a skill
+            const createRadioButtons = (skill, labelName) => {
+                const radioDiv = document.createElement('div');
+                radioDiv.classList.add('radio-group');
+                radioDiv.setAttribute('id', `radio-${skill}`);
+                
+                // Create a label
+                const label = document.createElement('label');
+                label.textContent = `${labelName} Rating:`;
+                radioDiv.appendChild(label);
+                
+                // Create the container for radio buttons
+                const radioButtonsContainer = document.createElement('div');
+                radioButtonsContainer.classList.add('ratings');
+        
+                // Create radio buttons from 1 to 5
+                for (let i = 1; i <= 5; i++) {
+                    const radioWrapper = document.createElement('span');
+                    radioWrapper.classList.add('rating');
+                    
+                    const radioInput = document.createElement('input');
+                    radioInput.setAttribute('type', 'radio');
+                    radioInput.setAttribute('name', `rating-${skill}`);
+                    radioInput.setAttribute('value', i);
+                    radioInput.setAttribute('id', `rating-${skill}-${i}`);
+                    
+                    const radioLabel = document.createElement('label');
+                    radioLabel.textContent = i;
+                    radioLabel.setAttribute('for', `rating-${skill}-${i}`);
+        
+                    radioWrapper.appendChild(radioInput);
+                    radioWrapper.appendChild(radioLabel);
+                    radioButtonsContainer.appendChild(radioWrapper);
+                }
+        
+                radioDiv.appendChild(radioButtonsContainer);
+                radioContainer.appendChild(radioDiv);
+            };
+        
+            // Event listener to handle past skills dropdown changes
+            skillsSelect.addEventListener('change', () => {
+                const selectedOption = skillsSelect.value;
+                const selectedText = skillsSelect.options[skillsSelect.selectedIndex].text;
+        
+                // Check if the skill is already selected
+                if (!selectedSkills.has(selectedOption)) {
+                    selectedSkills.add(selectedOption);  // Add to selected skills
+                    createRadioButtons(selectedOption, selectedText);  // Generate radio buttons for the skill
+                }
+        
+                // Reset the dropdown to allow more selections
+                skillsSelect.selectedIndex = 0;
+            });
+        
+            // Event listener to handle future skills dropdown changes (optional handling, no rating)
+            futureSkillsSelect.addEventListener('change', () => {
+                const selectedFutureSkill = futureSkillsSelect.value;
+                alert(`You have selected to learn: ${selectedFutureSkill}`); // Optional handling for future skills
+            });
+        });
+        </script>
+        
+        
+</head>
+<body>
+    <!-- Wave Shape Top -->
+    <div class="wave-container">
+        <svg class="wave wave1" width="1440" height="228" viewBox="0 0 1440 228" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path opacity="0.25" d="M0 0V115.725C57.348 171.225 124.308 196.15 189.6 185.725C274.032 172.3 353.196 102.45 437.76 91.975C526.368 81.075 614.808 134.175 699.6 180.125C782.724 225.125 865.56 242.325 950.88 212.825C994.26 197.825 1034.7 168.225 1076.22 139.475C1187.39 62.5 1335.6 -35.725 1440 131.175V0H0Z" fill="#141414"/>
+        </svg>
+            
+            
+        <svg class="wave wave2" width="1440" height="275" viewBox="0 0 1440 275" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path opacity="0.5" d="M0 0V39.525C15.6 92.3 33.168 142.15 57.228 180.125C119.292 278.175 198 277.5 269.496 228.95C306.876 203.575 341.604 163.775 377.1 129.45C426.204 81.95 478.776 14.45 534.096 5.275C577.608 -1.85 619.176 28.825 652.416 84.175C690.54 147.65 727.2 239.175 776.772 266.675C825.3 293.65 874.392 249.95 919.728 205.975C965.064 162 1009.92 108.475 1060.03 98.35C1131.71 83.725 1195.97 155.55 1262.71 195.45C1298.95 217.1 1333.51 210.875 1367.22 176.7C1394.14 149.475 1424.82 109.375 1440 53.6V0H0Z" fill="#141414"/>
+        </svg>
+            
+        <svg class="wave wave3" width="1440" height="228" viewBox="0 0 1440 228" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0V14.075C179.916 147.5 376.908 178.3 570.996 106.425C622.596 87.325 672.072 56.125 724.128 40.275C794.928 18.7 859.104 70.875 922.8 128.775C993.516 193.05 1063.2 238.1 1141.44 225C1245.28 207.5 1348.39 110.725 1440 12.975V0H0Z" fill="#141414"/>
+        </svg>
     </div>
-    <div class="Wavesopacity11">
-     <div class="Vector">
-     </div>
-     <div class="Vector">
-     </div>
-     <div class="Vector">
-     </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="logo">
+            <img src="/images/ds github logo.png">
+        </div>
+        <div class="hero-content">
+            <h1>COOKING&ensp;IT&ensp;UP&ensp;IN&ensp;THE&ensp;DS&ensp;WAY</h1>
+            <a href="#contact-form" class="btn">GET STARTED</a>
+        </div>
+    </section>
+
+    <div class="wave-container bottom">
+        <svg class="wave wave1" width="1440" height="228" viewBox="0 0 1440 228" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path opacity="0.25" d="M0 0V115.725C57.348 171.225 124.308 196.15 189.6 185.725C274.032 172.3 353.196 102.45 437.76 91.975C526.368 81.075 614.808 134.175 699.6 180.125C782.724 225.125 865.56 242.325 950.88 212.825C994.26 197.825 1034.7 168.225 1076.22 139.475C1187.39 62.5 1335.6 -35.725 1440 131.175V0H0Z" fill="#141414"/>
+        </svg>
+            
+            
+        <svg class="wave wave2" width="1440" height="275" viewBox="0 0 1440 275" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path opacity="0.5" d="M0 0V39.525C15.6 92.3 33.168 142.15 57.228 180.125C119.292 278.175 198 277.5 269.496 228.95C306.876 203.575 341.604 163.775 377.1 129.45C426.204 81.95 478.776 14.45 534.096 5.275C577.608 -1.85 619.176 28.825 652.416 84.175C690.54 147.65 727.2 239.175 776.772 266.675C825.3 293.65 874.392 249.95 919.728 205.975C965.064 162 1009.92 108.475 1060.03 98.35C1131.71 83.725 1195.97 155.55 1262.71 195.45C1298.95 217.1 1333.51 210.875 1367.22 176.7C1394.14 149.475 1424.82 109.375 1440 53.6V0H0Z" fill="#141414"/>
+        </svg>
+            
+        <svg class="wave wave3" width="1440" height="228" viewBox="0 0 1440 228" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0V14.075C179.916 147.5 376.908 178.3 570.996 106.425C622.596 87.325 672.072 56.125 724.128 40.275C794.928 18.7 859.104 70.875 922.8 128.775C993.516 193.05 1063.2 238.1 1141.44 225C1245.28 207.5 1348.39 110.725 1440 12.975V0H0Z" fill="#141414"/>
+        </svg>
     </div>
-    <div class="Wavesopacity12">
-     <div class="Vector">
-     </div>
-     <div class="Vector">
-     </div>
-     <div class="Vector">
-     </div>
+
+    <!-- Know Us Section -->
+    <section id="know-us">
+        <h2>KNOW US</h2>
+        <p>We aim to bridge the gap between academic learning and real-world skills by dividing the entire class into collaborative teams. The focus is on developing skills while fostering a sense of teamwork, which is often overlooked in traditional education. Through consistent daily contributions to GitHub, you will build a strong portfolio, making your profiles more attractive to potential employers. Thiss initiative encourages peer-to-peer learning, where the community supports and motivates one another, ensuring that everyone of us progresses together. Ultimately, the knowledge and experience gained will not only enhance your individual skill sets but also provide a strong foundation for lifelong learning, empowering you to navigate future challenges and opportunities with confidence in both your personal and professional lives.</p>
+    </section>
+
+    <div class="wave-container">
+        <svg class="wave wave1" width="1440" height="228" viewBox="0 0 1440 228" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path opacity="0.25" d="M0 0V115.725C57.348 171.225 124.308 196.15 189.6 185.725C274.032 172.3 353.196 102.45 437.76 91.975C526.368 81.075 614.808 134.175 699.6 180.125C782.724 225.125 865.56 242.325 950.88 212.825C994.26 197.825 1034.7 168.225 1076.22 139.475C1187.39 62.5 1335.6 -35.725 1440 131.175V0H0Z" fill="#141414"/>
+        </svg>
+            
+            
+        <svg class="wave wave2" width="1440" height="275" viewBox="0 0 1440 275" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path opacity="0.5" d="M0 0V39.525C15.6 92.3 33.168 142.15 57.228 180.125C119.292 278.175 198 277.5 269.496 228.95C306.876 203.575 341.604 163.775 377.1 129.45C426.204 81.95 478.776 14.45 534.096 5.275C577.608 -1.85 619.176 28.825 652.416 84.175C690.54 147.65 727.2 239.175 776.772 266.675C825.3 293.65 874.392 249.95 919.728 205.975C965.064 162 1009.92 108.475 1060.03 98.35C1131.71 83.725 1195.97 155.55 1262.71 195.45C1298.95 217.1 1333.51 210.875 1367.22 176.7C1394.14 149.475 1424.82 109.375 1440 53.6V0H0Z" fill="#141414"/>
+        </svg>
+            
+        <svg class="wave wave3" width="1440" height="228" viewBox="0 0 1440 228" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0V14.075C179.916 147.5 376.908 178.3 570.996 106.425C622.596 87.325 672.072 56.125 724.128 40.275C794.928 18.7 859.104 70.875 922.8 128.775C993.516 193.05 1063.2 238.1 1141.44 225C1245.28 207.5 1348.39 110.725 1440 12.975V0H0Z" fill="#141414"/>
+        </svg>
     </div>
-    <div class="GetStarted">
-     GET STARTED
+
+    <!-- Form Section -->
+    <section id="contact-form">
+        <h2>Contact Us</h2>
+        <form id="dynamic-form">
+            <!-- Name and GitHub Handle inputs -->
+            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="Your GitHub Handle" required>
+    
+            <!-- Dropdown for past skills -->
+            <label for="pastSkills">Select a Past Skill:</label>
+            <select id="pastSkills">
+                <option value="" disabled selected>Select an option</option>
+                <option value="web-development">Web Development</option>
+                <option value="mobile-app">Mobile App Development</option>
+                <option value="ui-ux-design">UI/UX Design</option>
+                <option value="digital-marketing">Digital Marketing</option>
+            </select>
+    
+            <!-- Container for dynamically generated radio button sets (Past Skills) -->
+            <div id="radio-container"></div>
+    
+            <!-- Dropdown for future skills -->
+            <label for="futureSkills">Select a Future Skill to Learn:</label>
+            <select id="futureSkills">
+                <option value="" disabled selected>Select an option</option>
+                <option value="data-science">Data Science</option>
+                <option value="machine-learning">Machine Learning</option>
+                <option value="cloud-computing">Cloud Computing</option>
+                <option value="blockchain">Blockchain</option>
+            </select>
+    
+            <!-- Optional text box for submitting an idea -->
+            <label for="idea">Submit a Simple Idea (Optional):</label>
+            <textarea id="idea" placeholder="Write a brief idea here..." rows="4" cols="50"></textarea>
+    
+            <!-- Submit button -->
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    
+    
+
+
+    <!-- Wave Shape Bottom -->
+    <div class="wave-container bottom">
+        <svg class="wave wave1" width="1440" height="228" viewBox="0 0 1440 228" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path opacity="0.25" d="M0 0V115.725C57.348 171.225 124.308 196.15 189.6 185.725C274.032 172.3 353.196 102.45 437.76 91.975C526.368 81.075 614.808 134.175 699.6 180.125C782.724 225.125 865.56 242.325 950.88 212.825C994.26 197.825 1034.7 168.225 1076.22 139.475C1187.39 62.5 1335.6 -35.725 1440 131.175V0H0Z" fill="#141414"/>
+        </svg>
+            
+            
+        <svg class="wave wave2" width="1440" height="275" viewBox="0 0 1440 275" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path opacity="0.5" d="M0 0V39.525C15.6 92.3 33.168 142.15 57.228 180.125C119.292 278.175 198 277.5 269.496 228.95C306.876 203.575 341.604 163.775 377.1 129.45C426.204 81.95 478.776 14.45 534.096 5.275C577.608 -1.85 619.176 28.825 652.416 84.175C690.54 147.65 727.2 239.175 776.772 266.675C825.3 293.65 874.392 249.95 919.728 205.975C965.064 162 1009.92 108.475 1060.03 98.35C1131.71 83.725 1195.97 155.55 1262.71 195.45C1298.95 217.1 1333.51 210.875 1367.22 176.7C1394.14 149.475 1424.82 109.375 1440 53.6V0H0Z" fill="#141414"/>
+        </svg>
+            
+        <svg class="wave wave3" width="1440" height="228" viewBox="0 0 1440 228" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0V14.075C179.916 147.5 376.908 178.3 570.996 106.425C622.596 87.325 672.072 56.125 724.128 40.275C794.928 18.7 859.104 70.875 922.8 128.775C993.516 193.05 1063.2 238.1 1141.44 225C1245.28 207.5 1348.39 110.725 1440 12.975V0H0Z" fill="#141414"/>
+        </svg>
     </div>
-   </div>
-   <div class="Description">
-    <div class="Rectangle3">
-    </div>
-    <div class="KnowUs">
-     KNOW US
-    </div>
-   </div>
-   <div class="Header">
-    <div class="Rectangle2">
-    </div>
-    <div class="Wavesopacity12">
-     <div class="Vector">
-     </div>
-     <div class="Vector">
-     </div>
-     <div class="Vector">
-     </div>
-    </div>
-    <div class="Wavesopacity11">
-     <div class="Vector">
-     </div>
-     <div class="Vector">
-     </div>
-     <div class="Vector">
-     </div>
-    </div>
-    <div class="CookingItUpInTheDsWay">
-     <span style="
-              color: #b0b0b0;
-              font-size: 24px;
-              font-family: TypoGraphica;
-              font-weight: 400;
-              word-wrap: break-word;
-            ">
-      COOKING IT UP IN THE DS WA
-     </span>
-     <span style="
-              color: #b0b0b0;
-              font-size: 24px;
-              font-family: TypoGraphica;
-              font-weight: 400;
-              letter-spacing: 0.48px;
-              word-wrap: break-word;
-            ">
-      Y
-     </span>
-    </div>
-    <div class="S">
-     S
-    </div>
-    <img class="Image3" src="https://via.placeholder.com/300x300"/>
-    <div class="Navbar">
-     <div class="Rectangle5">
-     </div>
-     <div class="GetStarted">
-      GET STARTED
-     </div>
-     <div class="KnowUs">
-      KNOW US
-     </div>
-    </div>
-   </div>
-  </div>
- </body>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
+
+
+<!-- Overview
+Wave SVGs: Nice use of SVGs for decorative wave shapes, giving your site a unique visual appeal.
+Hero Section: Clear call-to-action with an engaging heading and button.
+Know Us Section: Well-written description explaining your mission and approach.
+Form Section: Dynamically generates radio buttons based on past skills and has a section for future skill selection.
+Suggestions for Improvement
+Accessibility:
+
+Form Labels: Ensure that all form elements have associated labels for better accessibility.
+SVG Accessibility: Add aria-hidden="true" to decorative SVGs if they don’t convey important content.
+SEO:
+
+Meta Description: Consider adding a meta description for better SEO.
+Alt Text for Images: Ensure that images have descriptive alt attributes.
+Performance:
+
+Minify CSS and JavaScript: Ensure that CSS and JavaScript files are minified to improve load times.
+Use Async or Defer: For JavaScript files, consider using async or defer attributes to prevent render-blocking.
+Form Enhancements:
+
+Form Validation: Add client-side validation to enhance user experience.
+Submit Handler: Ensure the form submission is properly handled (e.g., AJAX submission if needed).
+User Experience:
+
+Loading Spinner: Consider adding a spinner or loading indicator for form submission.
+Responsive Design: Test the site on different screen sizes to ensure responsiveness. -->
