@@ -8,75 +8,6 @@
     <title>My Website</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const skillsSelect = document.getElementById('pastSkills');
-            const futureSkillsSelect = document.getElementById('futureSkills');
-            const radioContainer = document.getElementById('radio-container');
-            
-            const selectedSkills = new Set();
-        
-            // Function to create radio buttons for a skill
-            const createRadioButtons = (skill, labelName) => {
-                const radioDiv = document.createElement('div');
-                radioDiv.classList.add('radio-group');
-                radioDiv.setAttribute('id', `radio-${skill}`);
-                
-                // Create a label
-                const label = document.createElement('label');
-                label.textContent = `${labelName} Rating:`;
-                radioDiv.appendChild(label);
-                
-                // Create the container for radio buttons
-                const radioButtonsContainer = document.createElement('div');
-                radioButtonsContainer.classList.add('ratings');
-        
-                // Create radio buttons from 1 to 5
-                for (let i = 1; i <= 5; i++) {
-                    const radioWrapper = document.createElement('span');
-                    radioWrapper.classList.add('rating');
-                    
-                    const radioInput = document.createElement('input');
-                    radioInput.setAttribute('type', 'radio');
-                    radioInput.setAttribute('name', `rating-${skill}`);
-                    radioInput.setAttribute('value', i);
-                    radioInput.setAttribute('id', `rating-${skill}-${i}`);
-                    
-                    const radioLabel = document.createElement('label');
-                    radioLabel.textContent = i;
-                    radioLabel.setAttribute('for', `rating-${skill}-${i}`);
-        
-                    radioWrapper.appendChild(radioInput);
-                    radioWrapper.appendChild(radioLabel);
-                    radioButtonsContainer.appendChild(radioWrapper);
-                }
-        
-                radioDiv.appendChild(radioButtonsContainer);
-                radioContainer.appendChild(radioDiv);
-            };
-        
-            // Event listener to handle past skills dropdown changes
-            skillsSelect.addEventListener('change', () => {
-                const selectedOption = skillsSelect.value;
-                const selectedText = skillsSelect.options[skillsSelect.selectedIndex].text;
-        
-                // Check if the skill is already selected
-                if (!selectedSkills.has(selectedOption)) {
-                    selectedSkills.add(selectedOption);  // Add to selected skills
-                    createRadioButtons(selectedOption, selectedText);  // Generate radio buttons for the skill
-                }
-        
-                // Reset the dropdown to allow more selections
-                skillsSelect.selectedIndex = 0;
-            });
-        
-            // Event listener to handle future skills dropdown changes (optional handling, no rating)
-            futureSkillsSelect.addEventListener('change', () => {
-                const selectedFutureSkill = futureSkillsSelect.value;
-                alert(`You have selected to learn: ${selectedFutureSkill}`); // Optional handling for future skills
-            });
-        });
-        </script>
         
         
 </head>
@@ -153,32 +84,7 @@
             <input type="text" placeholder="Your GitHub Handle" required>
     
             <!-- Dropdown for past skills -->
-            <label for="pastSkills">Select a Past Skill:</label>
-            <select id="pastSkills">
-                <option value="" disabled selected>Select an option</option>
-                <option value="web-development">Web Development</option>
-                <option value="mobile-app">Mobile App Development</option>
-                <option value="ui-ux-design">UI/UX Design</option>
-                <option value="digital-marketing">Digital Marketing</option>
-            </select>
-    
-            <!-- Container for dynamically generated radio button sets (Past Skills) -->
-            <div id="radio-container"></div>
-    
-            <!-- Dropdown for future skills -->
-            <label for="futureSkills">Select a Future Skill to Learn:</label>
-            <select id="futureSkills">
-                <option value="" disabled selected>Select an option</option>
-                <option value="data-science">Data Science</option>
-                <option value="machine-learning">Machine Learning</option>
-                <option value="cloud-computing">Cloud Computing</option>
-                <option value="blockchain">Blockchain</option>
-            </select>
-    
-            <!-- Optional text box for submitting an idea -->
-            <label for="idea">Submit a Simple Idea (Optional):</label>
-            <textarea id="idea" placeholder="Write a brief idea here..." rows="4" cols="50"></textarea>
-    
+
             <!-- Submit button -->
             <button type="submit">Submit</button>
         </form>
